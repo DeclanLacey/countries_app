@@ -1,0 +1,42 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, .25);
+    padding: 0px 15px 0px 15px;
+}
+
+.header-title {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.header-dark-mode-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: transparent;
+    border: none;
+    height: 35px;
+}
+
+.moon-svg  {
+    height: 16px;
+}
+
+.dark-mode-text {
+    font-size: .8rem;
+    font-weight: 500;
+}
+
+/* .dark-mode {
+    background-color: #2B3844;
+    color: white;
+} */
+
+/* /////////////// hover /////////////// */
+
+
+

@@ -1,1 +1,11 @@
-<p>country-cards works!</p>
+<div class="country-cards">
+    <div class="country-card" *ngFor="let country of allCountriesData">
+        <img class="country-card-img" src='{{country.flags.png}}'>
+        <div class="country-card-text-container">
+            <h2 class="country-card-name">{{country.name.common}}</h2>
+            <p class="country-card-content"><strong class="country-card-content-strong">Population: </strong>{{country.population | number:'1.0':'en-US'}}</p>
+            <p class="country-card-content"><strong class="country-card-content-strong">Region:</strong> {{country.region}}</p>
+            <p class="country-card-content"><strong class="country-card-content-strong">Capital:</strong> {{country.capital}}</p>
+        </div>
+    </div>
+</div>

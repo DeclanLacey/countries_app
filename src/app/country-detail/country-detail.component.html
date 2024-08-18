@@ -1,3 +1,19 @@
-<p>country-detail works!</p>
+<div class="country-detail">
+    <img src='{{countryData?.flags.svg}}' />
+    <h2>{{countryName}}</h2>
+    <div>
+        <p class="country-detail-content"><strong class="country-detail-content-strong">Native Name: </strong> {{countryData?.name}} </p>
+        <p class="country-detail-content"><strong class="country-detail-content-strong">Population: </strong> {{countryData?.population | number:'1.0':'en-US'}} </p>
+        <p class="country-detail-content"><strong class="country-detail-content-strong">Region: </strong> {{countryData?.region}} </p>
+        <p class="country-detail-content"><strong class="country-detail-content-strong">Sub-Region: </strong> {{countryData?.subregion}} </p>
+        <p class="country-detail-content"><strong class="country-detail-content-strong">Capital: </strong> {{countryData?.capital}} </p>
+    </div>
+    
+    <div>
+        <p class="country-detail-content"><strong class="country-detail-content-strong">Top Level Domain: </strong> {{countryData?.topLevelDomain[0]}} </p>
+        <p class="country-detail-content"><strong class="country-detail-content-strong">Currencies: </strong> {{countryData?.currencies[0].name}} </p>
+        <p class="country-detail-content"><strong class="country-detail-content-strong">Languages: </strong> {{languageData}} </p>
+    </div>
 
+</div>
 <router-outlet> </router-outlet>

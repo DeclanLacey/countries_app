@@ -1,16 +1,33 @@
 <div class="country-cards">
-    
-    <div class="country-card" *ngFor="let country of allCountriesData" >
-        <a class="country-card-link" [routerLink]="['/country-detail', country.name.common]" routerLinkActive="active">
-            <img class="country-card-img" src='{{country.flags.png}}'>
-            <div class="country-card-text-container">
-                <h2 class="country-card-name">{{country.name.common}}</h2>
-                <p class="country-card-content"><strong class="country-card-content-strong">Population: </strong>{{country.population | number:'1.0':'en-US'}}</p>
-                <p class="country-card-content"><strong class="country-card-content-strong">Region:</strong> {{country.region}}</p>
-                <p class="country-card-content"><strong class="country-card-content-strong">Capital:</strong> {{country.capital}}</p>
-            </div>
-        </a>
+
+    <div class="searchbar-filter">
+        
+            <input type="text" (input)="updateSearchName($event)" placeholder="Search for a country..."/>
+            <select (input)="updateRegion($event)"> 
+                <option value="">Filter By Region</option>
+                <option value="Africa">Africa</option>
+                <option value="Americas">America</option>
+                <option value="Asia">Asia</option>
+                <option value="Europe">Europe</option>
+                <option value="Oceania">Oceania</option>
+                <option value="Antarctic">Antarctic</option>
+            </select>
+        
     </div>
+    
+    <ng-container *ngFor="let country of allCountriesData">
+        <div class="country-card" *ngIf="(countryRegionFilter === '' ? true : (country.region === countryRegionFilter)) && (country.name.common).toLowerCase().includes((countryNameFilter).toLowerCase())">
+            <a class="country-card-link" [routerLink]="['/country-detail', country.name.common]" routerLinkActive="active" >
+                <img class="country-card-img" src='{{country.flags.png}}'>
+                <div class="country-card-text-container">
+                    <h2 class="country-card-name">{{country.name.common}}</h2>
+                    <p class="country-card-content"><strong class="country-card-content-strong">Population: </strong>{{country.population | number:'1.0':'en-US'}}</p>
+                    <p class="country-card-content"><strong class="country-card-content-strong">Region:</strong> {{country.region}}</p>
+                    <p class="country-card-content"><strong class="country-card-content-strong">Capital:</strong> {{country.capital}}</p>
+                </div>
+            </a>
+        </div>
+    </ng-container>
 </div>
 
 <router-outlet>

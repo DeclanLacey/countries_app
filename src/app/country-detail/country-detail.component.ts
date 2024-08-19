@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule,Location } from '@angular/common';
 import { Component, inject, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -17,6 +17,7 @@ export class CountryDetailComponent implements OnInit {
   languageData: any = ""
 
   private route = inject(ActivatedRoute);
+  constructor(private location: Location) {}
 
   ngOnInit(): void {
       this.route.paramMap.subscribe((params) => {
@@ -27,10 +28,10 @@ export class CountryDetailComponent implements OnInit {
   }
   
   fetchData() {
-    this.httpClient.get('https://restcountries.com/v2/name/' + this.countryName + "?fields=name,population,region,subregion,capital,topLevelDomain,currencies,languages,flags" )
+    this.httpClient.get('https://restcountries.com/v2/name/' + this.countryName + "?fields=name,population,region,subregion,capital,topLevelDomain,currencies,languages,flags,timezones" )
     .subscribe((data: any) => {
       this.countryData = data[0]
-      
+      console.log(data[0])
       if (data[0].languages.length > 1) {
         for(let i = 0; i < data[0].languages.length; i++) {
           console.log(data[0].languages[i].name)
@@ -43,10 +44,12 @@ export class CountryDetailComponent implements OnInit {
       }else {
         this.languageData = data[0].languages[0].name
       }
-      
     })
+  }
 
-  
+  goBack() {
+    this.location.back()
+    console.log("ran")
   }
 
   

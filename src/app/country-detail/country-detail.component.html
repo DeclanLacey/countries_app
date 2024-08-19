@@ -1,7 +1,9 @@
+<button class="back-btn" (click)="goBack()"><strong class="back-arrow">⟵ </strong> Back</button>
+
 <div class="country-detail">
-    <img src='{{countryData?.flags.svg}}' />
-    <h2>{{countryName}}</h2>
-    <div>
+    <img class="flag-img" src='{{countryData?.flags.svg}}' />
+    <h2 class="country-name">{{countryName}}</h2>
+    <div class="country-detail-container-one">
         <p class="country-detail-content"><strong class="country-detail-content-strong">Native Name: </strong> {{countryData?.name}} </p>
         <p class="country-detail-content"><strong class="country-detail-content-strong">Population: </strong> {{countryData?.population | number:'1.0':'en-US'}} </p>
         <p class="country-detail-content"><strong class="country-detail-content-strong">Region: </strong> {{countryData?.region}} </p>
@@ -9,11 +11,20 @@
         <p class="country-detail-content"><strong class="country-detail-content-strong">Capital: </strong> {{countryData?.capital}} </p>
     </div>
     
-    <div>
+    <div class="country-detail-container-two">
         <p class="country-detail-content"><strong class="country-detail-content-strong">Top Level Domain: </strong> {{countryData?.topLevelDomain[0]}} </p>
         <p class="country-detail-content"><strong class="country-detail-content-strong">Currencies: </strong> {{countryData?.currencies[0].name}} </p>
         <p class="country-detail-content"><strong class="country-detail-content-strong">Languages: </strong> {{languageData}} </p>
     </div>
 
+    <div class="time-zones-container">
+        <h3 class="time-zones-title">Time Zones:</h3>
+        <div class="time-zones-content-container">
+            <ng-container *ngFor="let timezone of countryData?.timezones">
+                <p class="time-zone">{{timezone}}</p>
+            </ng-container>
+        </div>
+        
+    </div>
 </div>
 <router-outlet> </router-outlet>

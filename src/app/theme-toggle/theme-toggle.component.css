@@ -6,10 +6,12 @@
     background-color: transparent;
     border: none;
     height: 35px;
+    color: var(--text-color);
 }
 
 .moon-svg  {
     height: 16px;
+    fill: var(--text-color);
 }
 
 .dark-mode-text {

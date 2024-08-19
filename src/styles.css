@@ -2,6 +2,7 @@
 
 body {
     margin: 0px;
+    background-color: var(--background-color);
 }
 
 img {
@@ -21,6 +22,26 @@ button:hover {
 a:hover {
     cursor: pointer;
 }
-/* .dark-mode {
+/* 
+.dark-theme {
     background-color: #202C36;
+    color: #ffffff;
 } */
+
+body {
+    --text-color: #000000;
+    --background-color: #ffffff;
+    --btn-text-color: #000000;
+    --btn-background-color: #ffffff;
+    --other-background-color: #ffffff;
+    --box-shadow: rgba(0, 0, 0, .5);
+}
+
+body.dark-theme {
+    --text-color: #ffffff;
+    --background-color: #202C36;
+    --btn-text-color: #ffffff;
+    --btn-background-color: #2B3844;
+    --other-background-color: #2B3844;
+    --box-shadow: rgba(32, 44, 54, 0)
+}

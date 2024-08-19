@@ -2,14 +2,16 @@
     width: 90%;
     margin: 0 auto;
     margin-top: 60px;
+    color: var(--text-color);
 }
 
 .back-btn {
     width: 100px;
     height: 35px;
     border: none;
-    background-color: white;
-    box-shadow: 0px 4px 4px 2px rgba(0, 0, 0, .5);
+    background-color: var(--btn-background-color);
+    color: var(--btn-text-color);
+    box-shadow: 0px 4px 4px 2px var(--box-shadow);
     border-radius: 2px;
     margin-left: 5%;
     margin-top: 40px;
@@ -62,7 +64,9 @@
 }
 
 .time-zone {
-    box-shadow: 0px 3px 3px 2px rgba(0, 0, 0, .25);
+    box-shadow: 0px 3px 3px 2px var(--box-shadow);
+    background-color: var(--other-background-color);
+    color: var(--text-color);
     width: fit-content;
     padding: 5px 20px 5px 20px;
     font-weight: 300;

@@ -31,7 +31,6 @@ export class CountryDetailComponent implements OnInit {
     this.httpClient.get('https://restcountries.com/v2/name/' + this.countryName + "?fields=name,population,region,subregion,capital,topLevelDomain,currencies,languages,flags,timezones" )
     .subscribe((data: any) => {
       this.countryData = data[0]
-      console.log(data[0])
       if (data[0].languages.length > 1) {
         for(let i = 0; i < data[0].languages.length; i++) {
           console.log(data[0].languages[i].name)

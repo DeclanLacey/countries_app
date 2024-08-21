@@ -12,6 +12,7 @@
     margin-bottom: 40px;
     border-radius: 5px;
     background-color: var(--other-background-color);
+    max-width: 300px;
 }
 
 .country-card-link {
@@ -26,6 +27,7 @@
 .country-card-img {
     border-radius: 5px 5px 0px 0px;
     width: 100%;
+    max-height: 220px;
 }
 
 .country-card-name {
@@ -98,6 +100,7 @@
 
 .custom-select::before,
 .custom-select::after {
+  color: var(--text-color);
   position: absolute;
   right: 20px;
   pointer-events: none;
@@ -110,4 +113,28 @@
   content: '˅';
   font-size: 1rem;
 
+}
+
+@media (min-width: 600px) {
+
+    .country-card {
+        min-width: 350px;
+        
+    }
+    .country-cards-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 350px);
+        gap: 80px;
+        width: 90%;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 1100px) {
+    .searchbar-filter {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 85%;
+    }
 }

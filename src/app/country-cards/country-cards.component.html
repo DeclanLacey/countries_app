@@ -24,19 +24,22 @@
         </div>
     </div>
     
-    <ng-container *ngFor="let country of allCountriesData">
-        <div class="country-card" *ngIf="(countryRegionFilter === '' ? true : (country.region === countryRegionFilter)) && (country.name.common).toLowerCase().includes((countryNameFilter).toLowerCase())">
-            <a class="country-card-link" [routerLink]="['/country-detail', country.name.common]" routerLinkActive="active" >
-                <img class="country-card-img" src='{{country.flags.svg}}'>
-                <div class="country-card-text-container">
-                    <h2 class="country-card-name">{{country.name.common}}</h2>
-                    <p class="country-card-content"><strong class="country-card-content-strong">Population: </strong>{{country.population | number:'1.0':'en-US'}}</p>
-                    <p class="country-card-content"><strong class="country-card-content-strong">Region:</strong> {{country.region}}</p>
-                    <p class="country-card-content"><strong class="country-card-content-strong">Capital:</strong> {{country.capital}}</p>
-                </div>
-            </a>
-        </div>
-    </ng-container>
+    <div class="country-cards-container">
+        <ng-container *ngFor="let country of allCountriesData">
+            <div class="country-card" *ngIf="(countryRegionFilter === '' ? true : (country.region === countryRegionFilter)) && (country.name.common).toLowerCase().includes((countryNameFilter).toLowerCase())">
+                <a class="country-card-link" [routerLink]="['/country-detail', country.name.common]" routerLinkActive="active" >
+                    <img class="country-card-img" src='{{country.flags.svg}}'>
+                    <div class="country-card-text-container">
+                        <h2 class="country-card-name">{{country.name.common}}</h2>
+                        <p class="country-card-content"><strong class="country-card-content-strong">Population: </strong>{{country.population | number:'1.0':'en-US'}}</p>
+                        <p class="country-card-content"><strong class="country-card-content-strong">Region:</strong> {{country.region}}</p>
+                        <p class="country-card-content"><strong class="country-card-content-strong">Capital:</strong> {{country.capital}}</p>
+                    </div>
+                </a>
+            </div>
+        </ng-container>
+    </div>
+    
 </div>
 
 <router-outlet>

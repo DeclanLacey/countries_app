@@ -137,4 +137,9 @@
         justify-content: space-between;
         width: 85%;
     }
+
+    .custom-select::after {
+        top: 20%;
+    }
+    
 }

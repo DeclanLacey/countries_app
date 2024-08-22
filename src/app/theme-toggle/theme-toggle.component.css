@@ -16,5 +16,17 @@
 
 .dark-mode-text {
     font-size: .8rem;
-    font-weight: 500;
+    font-weight: 600;
+
+}
+
+@media (min-width: 600px) {
+    .dark-mode-text {
+        font-size: 1rem;
+        margin-right: 40px;
+    }
+
+    .moon-svg {
+        height: 20px;
+    }
 }
